@@ -117,14 +117,14 @@ header {
 }
 
 .nav-link:hover {
-  color: #a30311; 
+  color: white; 
   text-shadow: 
     0 0 5px rgba(163, 3, 17, 1), 
     0 0 10px rgba(163, 3, 17, 0.7); 
 }
 
 .nav-link.active {
-  color: #a30311; 
+  color: white; 
   font-weight: 700;
   text-shadow: 
     0 0 5px rgba(163, 3, 17, 1), 

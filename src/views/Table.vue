@@ -188,7 +188,11 @@
   }
   
   .led-text {
-    color:white; 
+    color:var(--color); 
+    text-shadow:
+        0 0 5px rgba(163, 3, 17, 1),
+        0 0 10px rgba(163, 3, 17, 0.7);
+    margin: 0 auto; 
   }
   </style>
   
