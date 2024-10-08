@@ -68,12 +68,12 @@
   <style scoped>
   .table-title {
     font-size: 2em;
-    color: #a30311; /* Piros szín */
+    color: #a30311; 
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 
       0 0 5px rgba(163, 3, 17, 1), 
-      0 0 10px rgba(163, 3, 17, 0.7); /* LED hatás */
+      0 0 10px rgba(163, 3, 17, 0.7); 
   }
   
   .content-table {
@@ -81,13 +81,13 @@
     margin: 15px 0;
     font-size: 1em;
     min-width: 100%;
-    border: 1px solid #a30311; /* Piros szín */
+    border: 1px solid #a30311; 
     border-radius: 10px;
     overflow: hidden;
   }
   
   .content-table thead tr {
-    background-color: #a30311; /* Piros szín */
+    background-color: #a30311; 
     color: #ffffff;
   }
   
@@ -111,7 +111,7 @@
   }
   
   .details-btn {
-    background-color: #a30311; /* Piros szín */
+    background-color: #a30311; 
     color: white;
     border: none;
     padding: 6px 12px;
