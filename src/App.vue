@@ -1,85 +1,138 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="container-fluid p-4">
+    <header class="mb-4 text-center position-relative">
+      <h1 class="display-3">
+        <span class="led-title">Kosárlabdázók</span>
+      </h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <div class="separator"></div> 
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+      <ul class="nav justify-content-center mb-4">
+        <li>
+          <RouterLink
+            to="/"
+            :class="{ active: $route.path === '/' }"
+            class="nav-link led-link"
+          >
+            Home
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            to="/table"
+            :class="{ active: $route.path === '/table' }"
+            class="nav-link led-link"
+          >
+            Táblázat
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            to="/cards"
+            :class="{ active: $route.path === '/cards' }"
+            class="nav-link led-link"
+          >
+            Kártyák
+          </RouterLink>
+        </li>
+      </ul>
+    </header>
+    <RouterView />
+  </div>
 </template>
 
-<style scoped>
+<style>
+body {
+  background: black;
+  height: 100%;
+  user-select: none;
+  color: #a30311; 
+}
+
+.separator {
+  animation-delay: 0.6s; 
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5; 
+  }
+  100% {
+    opacity: 1; 
+  }
+}
+
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  position: relative;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.display-3 {
+  font-weight: 400;
+  position: relative;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
+.led-title {
   display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  position: relative;
+  color: #a30311; 
+  text-shadow: 
+    0 0 5px rgba(163, 3, 17, 1), 
+    0 0 10px rgba(163, 3, 17, 0.7); 
 }
 
-nav a:first-of-type {
-  border: 0;
+.separator {
+  height: 5px; 
+  width: 100%; 
+  margin: 20px 0;
+  background: linear-gradient(90deg, #a30311, #a30311, #a30311); 
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(163, 3, 17, 0.5), 0 0 20px rgba(163, 3, 17, 0.5); 
+  animation: glow 1.5s infinite alternate; 
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.nav {
+  list-style: none;
+  padding: 0;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.nav li {
+  margin: 0 10px;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  color: white; 
+  padding: 5px 15px;
+  text-decoration: none;
+  transition: 0.5s;
+  text-shadow: 
+    0 0 5px rgba(163, 3, 17, 1), 
+    0 0 10px rgba(163, 3, 17, 0.7); 
+}
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+.nav-link:hover {
+  color: #a30311; 
+  text-shadow: 
+    0 0 5px rgba(163, 3, 17, 1), 
+    0 0 10px rgba(163, 3, 17, 0.7); 
+}
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.nav-link.active {
+  color: #a30311; 
+  font-weight: 700;
+  text-shadow: 
+    0 0 5px rgba(163, 3, 17, 1), 
+    0 0 10px rgba(163, 3, 17, 0.7); 
+}
+
+.form-check-input:checked {
+  background-color: #a30311; 
+  border-color: #a30311; 
 }
 </style>
