@@ -45,13 +45,43 @@
     data() {
       return {
         jatekosok: [
-          { id: 1, nev: "Kobe Bryant", poszt: "Shooting Guard", kep: "/kobe.jpg", leiras: "Kobe Bryant, az NBA egyik legnagyobb játékosa, 5-szörös NBA-bajnok és 2-szeres olimpiai aranyérmes." },
-          { id: 2, nev: "LeBron James", poszt: "Small Forward", kep: "/lebron.jpg", leiras: "LeBron James, a kosárlabda legendája, 4-szeres NBA-bajnok és 4-szeres MVP." },
-          { id: 3, nev: "Michael Jordan", poszt: "Shooting Guard", kep: "/michael.jpg", leiras: "Michael Jordan, a kosárlabda történetének legjobbja, 6-szoros NBA-bajnok és 14-szeres All-Star." },
-          { id: 4, nev: "Stephen Curry", poszt: "Point Guard", kep: "/stephen.jpg", leiras: "Stephen Curry, a hárompontos király, 3-szoros NBA-bajnok és 2-szeres MVP." },
-          { id: 5, nev: "Kevin Durant", poszt: "Small Forward", kep: "/kevin.jpg", leiras: "Kevin Durant, az NBA egyik legjobb pontszerzője, 2-szeres NBA-bajnok és 2-szeres MVP." },
-        ],
-        selectedPlayer: null,
+  { 
+    id: 1, 
+    nev: "Kobe Bryant", 
+    poszt: "Shooting Guard", 
+    kep: "/kobe.jpg", 
+    leiras: "Kobe Bryant, az NBA egyik legnagyobb játékosa, 5-szörös NBA-bajnok és 2-szeres olimpiai aranyérmes. A Los Angeles Lakers ikonikus játékosaként, Bryant híres volt a technikai tudásáról, versenyszelleméről és az elképesztő munkamoráljáról. Különleges stílusa és klutcha kiemelte őt a sportág történetéből." 
+  },
+  { 
+    id: 2, 
+    nev: "LeBron James", 
+    poszt: "Small Forward", 
+    kep: "/lebron.jpg", 
+    leiras: "LeBron James, a kosárlabda legendája, 4-szeres NBA-bajnok és 4-szeres MVP. A Cleveland Cavaliers, a Miami Heat és a Los Angeles Lakers csapataiban játszott, és mindhárom helyen meghatározó szerepet játszott. James nemcsak a pályán, hanem a közösségi kezdeményezésekben is aktív, és az egyik legismertebb sportoló a világon." 
+  },
+  { 
+    id: 3, 
+    nev: "Michael Jordan", 
+    poszt: "Shooting Guard", 
+    kep: "/michael.jpg", 
+    leiras: "Michael Jordan, a kosárlabda történetének legjobbja, 6-szoros NBA-bajnok és 14-szeres All-Star. Jordan a Chicago Bulls csapatával vált híressé, és a 90-es években dominálta az NBA-t. Az ő neve összefonódott a versenyszellemmel és a győzni akarással, ami még ma is inspirálja a fiatal játékosokat." 
+  },
+  { 
+    id: 4, 
+    nev: "Stephen Curry", 
+    poszt: "Point Guard", 
+    kep: "/stephen.jpg", 
+    leiras: "Stephen Curry, a hárompontos király, 3-szoros NBA-bajnok és 2-szeres MVP. Curry megváltoztatta a kosárlabdázás stílusát azzal, hogy a távoli dobásokra helyezte a hangsúlyt. A Golden State Warriors csapatában játszik, ahol ő a vezető játékos, és folyamatosan új rekordokat állít fel." 
+  },
+  { 
+    id: 5, 
+    nev: "Kevin Durant", 
+    poszt: "Small Forward", 
+    kep: "/kevin.jpg", 
+    leiras: "Kevin Durant, az NBA egyik legjobb pontszerzője, 2-szeres NBA-bajnok és 2-szeres MVP. Durant a hosszú lábai és kiváló dobástechnikai tudása révén képes megoldani a legnehezebb helyzeteket is. Játszott a Seattle SuperSonics, a Oklahoma City Thunder, a Golden State Warriors és a Brooklyn Nets csapataiban." 
+  },
+],
+    selectedPlayer: null,
       };
     },
     methods: {
@@ -98,9 +128,9 @@
   }
   
   .table-cell {
-    color: white;
     font-weight: 500;
     text-align: center;
+    background-color: var(--bg-black-50);
   }
   
   .player-image {

@@ -47,7 +47,7 @@ import { RouterLink, RouterView } from "vue-router";
 
 <style>
 body {
-  background: black;
+  background: var(--bg-black-100);
   height: 100%;
   user-select: none;
   color: #a30311; 
