@@ -75,6 +75,28 @@
             kep: '/kevin.jpg',
             leiras: 'Kevin Durant, az NBA egyik legjobb játékosa, aki 2 NBA bajnoki címet nyert a Golden State Warriors és a Brooklyn Nets csapatával. Durant 4 alkalommal nyerte el az NBA legértékesebb játékosának (MVP) címét, és 13 alkalommal választották All-Star játékossá. Kiemelkedő teljesítménye és sokoldalúsága miatt sokan a modern kosárlabda egyik legjobb játékosának tartják. Durant a 2012-es London-i Olimpián aranyérmet nyert az Egyesült Államok csapatával.'
           },
+          {
+            id: 6,
+            nev: 'Larry Bird',
+            poszt: 'Small Forward / Power Forward',
+            kep: '/larry.jpg',
+            leiras: 'Larry Bird a Boston Celtics legendás játékosa, aki az 1980-as években dominálta az NBA-t. Háromszoros NBA-bajnok és háromszoros MVP, Bird híres volt a kiváló kosárlabda-intelligenciájáról, pontos lövéseiről és kreatív játékáról. Később sikeres edző és csapatvezető lett.'
+          },
+          {
+            id: 7,
+            nev: "Shaquille O'Neal",
+            poszt: 'Center',
+            kep: '/onel.jpg',
+            leiras: "Shaquille O'Neal a kosárlabda történetének egyik legdominánsabb centere. Az NBA-ben 1992-től 2011-ig játszott, és négy NBA-bajnoki címet nyert. Shaq 7 láb 1 inch (215 cm) magas volt, ami lehetővé tette számára, hogy fizikailag uralja a játékot. Az aktív pályafutása után sikeres médiaszemélyiség és üzletember lett."
+          },
+          {
+            id: 8,
+            nev: 'Magic Johnson',
+            poszt: 'Point Guard',
+            kep: '/magic.jpg',
+            leiras: 'Earvin "Magic" Johnson a kosárlabda egyik legnagyobb alakja, aki az 1980-as években és a 90-es évek elején játszott. A Los Angeles Lakers csapatában vált híressé, ahol 1979 és 1991, valamint 1996 között szerepelt. Johnson öt NBA-bajnoki címet nyert és háromszor választották az NBA MVP-jének.'
+          },
+          
         
         ],
         selectedPlayer: null,
