@@ -184,7 +184,7 @@ export default {
   margin: 0 auto; 
 }
 
-/* Animációk */
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
@@ -192,7 +192,7 @@ export default {
   opacity: 0;
 }
 
-/* Fokozatos megjelenés */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
