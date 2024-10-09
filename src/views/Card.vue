@@ -56,7 +56,7 @@
           },
           {
             id: 3,
-            nev: 'Miachel Jordan',
+            nev: 'Michael Jordan',
             poszt: 'Shooting Guard',
             kep: '/michael.jpg',
             leiras: 'Michael Jordan, az NBA történetének egyik legnagyobb ikonja. 6 NBA bajnoki címet nyert a Chicago Bulls csapatával, és 14 alkalommal választották All-Star játékossá. Jordan híres volt a versenyszelleméről, és a "His Airness" becenéven vált ismertté, amely a légies ugrásaira utal. Karrierje során 5 alkalommal nyerte el az MVP címet, és a kosárlabda kultúrára gyakorolt hatása máig érezhető.'
