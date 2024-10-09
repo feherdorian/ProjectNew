@@ -44,35 +44,35 @@
             id: 1,
             nev: 'Kobe Bryant',
             poszt: 'Shooting Guard',
-            kep: '/kobe.jpg',
+            kep: '/kobe2.jpg',
             leiras: 'Kobe Bryant, az NBA egyik legnagyobb játékosa. Összesen 20 évet töltött a Los Angeles Lakers csapatában, ahol 5 NBA bajnoki címet nyert. Kobe a "Black Mamba" becenéven vált ismertté, és legendás munkamoráljáról, valamint versenyszelleméről híres. Karrierje során 18 alkalommal választották All-Star játékossá, és 2008-ban elnyerte az NBA legértékesebb játékosának (MVP) címét.'
           },
           {
             id: 2,
             nev: 'LeBron James',
             poszt: 'Small Forward',
-            kep: '/lebron.jpg',
+            kep: '/lebron2.jpg',
             leiras: 'LeBron James, a kosárlabda legendája, aki három NBA bajnoki címet nyert három különböző csapattal (Miami Heat, Cleveland Cavaliers, Los Angeles Lakers). A "King James" becenéven ismert LeBron számos rekordot tart, és az NBA történetének egyik legjobb játékosának tartják. Karrierje során 17 alkalommal választották All-Star játékossá, és 4 alkalommal elnyerte az MVP címet.'
           },
           {
             id: 3,
             nev: 'Michael Jordan',
             poszt: 'Shooting Guard',
-            kep: '/michael.jpg',
+            kep: '/michael2.jpg',
             leiras: 'Michael Jordan, az NBA történetének egyik legnagyobb ikonja. 6 NBA bajnoki címet nyert a Chicago Bulls csapatával, és 14 alkalommal választották All-Star játékossá. Jordan híres volt a versenyszelleméről, és a "His Airness" becenéven vált ismertté, amely a légies ugrásaira utal. Karrierje során 5 alkalommal nyerte el az MVP címet, és a kosárlabda kultúrára gyakorolt hatása máig érezhető.'
           },
           {
             id: 4,
             nev: 'Stephen Curry',
             poszt: 'Point Guard',
-            kep: '/stephen.jpg',
+            kep: '/stephen2.jpg',
             leiras: 'Stephen Curry, a Golden State Warriors sztárja és a modern kosárlabdázás forradalmasítója. Curry híres a hárompontos lövéseiről, és ő az első játékos, aki egy idényben 400 hárompontos kosarat dobott. 3 NBA bajnoki címet nyert, és kétszer választották az NBA legértékesebb játékosának (MVP). Számtalan rekordot állított fel a hárompontos lövések terén, és általánosan elismert a sportág történetének legjobb dobójaként.',
           },
           {
             id: 5,
             nev: 'Kevin Durant',
             poszt: 'Small Forward',
-            kep: '/kevin.jpg',
+            kep: '/kevin2.jpg',
             leiras: 'Kevin Durant, az NBA egyik legjobb játékosa, aki 2 NBA bajnoki címet nyert a Golden State Warriors és a Brooklyn Nets csapatával. Durant 4 alkalommal nyerte el az NBA legértékesebb játékosának (MVP) címét, és 13 alkalommal választották All-Star játékossá. Kiemelkedő teljesítménye és sokoldalúsága miatt sokan a modern kosárlabda egyik legjobb játékosának tartják. Durant a 2012-es London-i Olimpián aranyérmet nyert az Egyesült Államok csapatával.'
           },
           {
