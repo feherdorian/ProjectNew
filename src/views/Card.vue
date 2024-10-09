@@ -148,32 +148,61 @@
   }
   
   .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  animation: fadeIn 0.5s ease; 
+}
+
+.modal-content {
+  background-color: var(--bg-black-50);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  animation: scaleIn 0.3s ease; 
+}
+
+.modal-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease; 
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .modal-content {
-    background-color: var(--bg-black-50);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+  to {
+    opacity: 1;
   }
-  
-  .modal-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
   }
-  
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.modal-image:hover {
+  transform: scale(1.1); 
+} 
+
   .close {
     float: right;
     font-size: 20px;
