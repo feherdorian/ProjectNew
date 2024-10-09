@@ -54,7 +54,13 @@ body {
 }
 
 .separator {
-  animation-delay: 0.6s; 
+  height: 5px; 
+  width: 100%; 
+  margin: 20px 0;
+  background: linear-gradient(90deg, #ff4d4d, #ff0000, #a30311); /* Piros átmenet */
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5); 
+  animation: glow 1.5s infinite alternate; 
 }
 
 @keyframes glow {
@@ -63,6 +69,7 @@ body {
   }
   100% {
     opacity: 1; 
+    transform: scale(1.05); 
   }
 }
 
@@ -82,16 +89,6 @@ header {
   text-shadow: 
     0 0 5px rgba(163, 3, 17, 1), 
     0 0 10px rgba(163, 3, 17, 0.7); 
-}
-
-.separator {
-  height: 5px; 
-  width: 100%; 
-  margin: 20px 0;
-  background: linear-gradient(90deg, #a30311, #a30311, #a30311); 
-  border-radius: 5px; 
-  box-shadow: 0 0 10px rgba(163, 3, 17, 0.5), 0 0 20px rgba(163, 3, 17, 0.5); 
-  animation: glow 1.5s infinite alternate; 
 }
 
 .nav {
