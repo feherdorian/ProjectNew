@@ -78,7 +78,7 @@ header {
 .led-title {
   display: inline-block;
   position: relative;
-  color: #a30311; 
+  color: white; 
   text-shadow: 
     0 0 5px rgba(163, 3, 17, 1), 
     0 0 10px rgba(163, 3, 17, 0.7); 

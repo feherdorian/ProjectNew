@@ -22,33 +22,50 @@
   <style scoped>
   .player-card {
     background-color: var(--bg-black-50);
-    border-radius: 30px; /* Oval shape */
+    border-radius: 30px; 
     padding: 10px;
     margin: 10px;
-    width: 150px; /* Adjust width as needed */
+    width: 150px; 
     text-align: center;
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
   }
   
-  .player-card:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-  }
-  
-  .player-image {
+  .player-card {
+    width: 250px; 
+    height: 320px; 
+    margin: 20px; 
+    transition: transform 0.3s; 
+}
+
+.player-card:hover {
+    transform: scale(1.1); 
+}
+
+.player-image {
     width: 100%;
-    height: auto;
-    border-radius: 30px; /* Match the card shape */
-  }
-  
-  .player-name {
+    max-height: 200px; 
+    border-radius: 10%;
+}
+
+.player-name {
     font-weight: bold;
-    color: #a30311;
-  }
-  
-  .player-position {
-    color: #555;
-  }
+    color: white;
+    margin-top: 10px; 
+    text-shadow:
+        0 0 5px rgba(163, 3, 17, 1),
+        0 0 10px rgba(163, 3, 17, 0.7);
+    margin: 0 auto; 
+}
+.player-position{
+  font-weight: bold;
+    color: white;
+    margin-top: 10px; 
+    text-shadow:
+        0 0 5px rgba(163, 3, 17, 1),
+        0 0 10px rgba(163, 3, 17, 0.7);
+    margin: 0 auto; 
+}
   </style>
   
