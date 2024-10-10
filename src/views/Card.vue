@@ -1,6 +1,7 @@
 <template>
     <div class="container">
       <h1 class="table-title led-text">Kosárlabdázók</h1>
+      <div class="separator"></div> 
       <div class="search-container">
         <input
           type="text"
@@ -172,7 +173,7 @@
 .modal-image {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
   transition: transform 0.3s ease; 
 }
@@ -220,5 +221,14 @@
         0 0 10px rgba(163, 3, 17, 0.7);
     margin: 0 auto; 
 }
+.separator {
+  height: 5px; 
+  margin: 20px 0;
+  background: linear-gradient(90deg, #ff4d4d, #ff0000, #a30311);
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5);
+  width: auto; 
+}
+
   </style>
   

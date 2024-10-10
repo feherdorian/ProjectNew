@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-12 side-a">
       <h1 class="table-title led-text">Kosárlabdázók Táblázata</h1>
+      <div class="separator"></div> 
       <div class="led-separator2"></div>
 
       <transition name="fade">
@@ -124,7 +125,7 @@ export default {
 .player-image {
   width: 80px;
   height: 80px; 
-  border-radius: 50%; 
+  border-radius: 15%; 
   object-fit: cover; 
 }
 
@@ -165,7 +166,7 @@ export default {
 .modal-image {
   width: 120px; 
   height: 120px; 
-  border-radius: 50%; 
+  border-radius: 10%; 
   object-fit: cover; 
 }
 
@@ -190,6 +191,15 @@ export default {
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+
+.separator{
+  height: 5px; 
+  width: 100%; 
+  margin: 20px 0;
+  background: linear-gradient(90deg, #ff4d4d, #ff0000, #a30311);
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5); 
 }
 
 

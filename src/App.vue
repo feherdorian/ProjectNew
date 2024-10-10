@@ -57,10 +57,9 @@ body {
   height: 5px; 
   width: 100%; 
   margin: 20px 0;
-  background: linear-gradient(90deg, #ff4d4d, #ff0000, #a30311); /* Piros átmenet */
+  background: linear-gradient(90deg, #ff4d4d, #ff0000, #a30311);
   border-radius: 5px; 
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5); 
-  animation: glow 1.5s infinite alternate; 
 }
 
 @keyframes glow {

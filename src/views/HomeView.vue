@@ -26,7 +26,7 @@ export default {
       if (this.titleIndex < this.title.length) {
         this.titleText += this.title.charAt(this.titleIndex);
         this.titleIndex++;
-        setTimeout(this.typeTitle, 70); 
+        setTimeout(this.typeTitle, 60); 
       } else {
        
         this.typeText();
@@ -36,7 +36,7 @@ export default {
       if (this.textIndex < this.fullText.length) {
         this.displayedText += this.fullText.charAt(this.textIndex);
         this.textIndex++;
-        setTimeout(this.typeText, 70); 
+        setTimeout(this.typeText, 60); 
       }
     },
   },

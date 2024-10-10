@@ -31,6 +31,7 @@ export default {
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.5s ease-in;
 }
 
 .player-card:hover {
@@ -67,5 +68,13 @@ export default {
     0 0 5px rgba(163, 3, 17, 1),
     0 0 10px rgba(163, 3, 17, 0.7);
   margin: 0 auto; 
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>
