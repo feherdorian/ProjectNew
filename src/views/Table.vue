@@ -143,41 +143,37 @@ export default {
 }
 
 .modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 999;
-  animation: fadeIn 0.5s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff
 }
 
 .modal-content {
-  background-color: var(--bg-black-50);
+  background-color:var(--bg-black-50);
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
+  max-width: 500px;
+  width: 100%;
 }
 
 .modal-image {
-  width: 120px; 
-  height: 120px; 
-  border-radius: 10%; 
-  object-fit: cover; 
+  width: 100%;
+  border-radius: 5px;
 }
 
+
 .close {
-  float: right;
-  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
   cursor: pointer;
-  color: white;
-  text-shadow:
-        0 0 5px rgba(163, 3, 17, 1),
-        0 0 10px rgba(163, 3, 17, 0.7);
 }
 
 .led-text {
@@ -196,13 +192,12 @@ export default {
   opacity: 0;
 }
 
-.separator{
-  height: 5px; 
-  width: 100%; 
-  margin: 20px 0;
-  background: linear-gradient(90deg, #ff4d4d, #ff0000, #a30311);
-  border-radius: 5px; 
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5); 
+.separator {
+  height: 4px;
+  background-color: var(--led-color);
+  width: 60%;
+  margin: 10px auto;
+  animation: blink 1.5s infinite;
 }
 
 

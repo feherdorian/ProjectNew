@@ -1,8 +1,18 @@
 <template>
-  <div class="player-card" @click="emitClick">
-    <img :src="jatekos.kep" alt="Kép" class="player-image" />
-    <h3 class="player-name">{{ jatekos.nev }}</h3>
-    <p class="player-position">{{ jatekos.poszt }}</p>
+  <div class="player-card" @mouseover="hover = true" @mouseleave="hover = false">
+    <div class="card-inner" :class="{ flipped: hover }">
+      <div class="card-front">
+        <img :src="jatekos.kep" alt="Kép" class="player-image" />
+        <h3 class="player-name">{{ jatekos.nev }}</h3>
+        <p class="player-position">{{ jatekos.poszt }}</p>
+      </div>
+      <div class="card-back">
+        <h3 class="awards-title">Díjak</h3>
+        <ul class="awards-list">
+          <li v-for="dij in jatekos.dijak" :key="dij">{{ dij }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,70 +21,88 @@ export default {
   props: {
     jatekos: Object,
   },
-  methods: {
-    emitClick() {
-      this.$emit('click');
-    },
+  data() {
+    return {
+      hover: false, 
+    };
   },
 };
 </script>
 
 <style scoped>
 .player-card {
-  background-color: var(--bg-black-50);
-  border-radius: 30px; 
-  padding: 10px;
+  perspective: 1000px; 
+  width: 250px;
+  height: 320px;
   margin: 20px;
-  width: 250px; 
-  height: 320px; 
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  animation: fadeIn 0.5s ease-in;
 }
 
-.player-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: var(--bg-black-50);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: var(--bg-black-50);
+}
+
+.awards-title {
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(163, 3, 17, 1), 0 0 10px rgba(163, 3, 17, 0.7);
+}
+
+.awards-list {
+  list-style: none;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+
+.awards-list li {
+  margin: 5px 0;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(163, 3, 17, 1), 0 0 10px rgba(163, 3, 17, 0.7);
 }
 
 .player-image {
   width: 100%;
-  max-height: 200px; 
+  max-height: 200px;
   border-radius: 10%;
-  transition: transform 0.3s;
 }
 
-.player-card:hover .player-image {
-  transform: scale(1.1);
-}
-
-.player-name {
-  font-weight: bold;
-  color: white;
-  margin-top: 10px; 
-  text-shadow:
-    0 0 5px rgba(163, 3, 17, 1),
-    0 0 10px rgba(163, 3, 17, 0.7);
-  margin: 0 auto; 
-}
-
+.player-name,
 .player-position {
-  font-weight: bold;
   color: white;
-  margin-top: 10px; 
-  text-shadow:
-    0 0 5px rgba(163, 3, 17, 1),
-    0 0 10px rgba(163, 3, 17, 0.7);
-  margin: 0 auto; 
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  text-shadow: 0 0 5px rgba(163, 3, 17, 1), 0 0 10px rgba(163, 3, 17, 0.7);
+  margin: 10px auto;
 }
 </style>
