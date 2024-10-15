@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12 side-a">
       <h1 class="table-title led-text">Kosárlabdázók Táblázata</h1>
-      <div class="separator"></div> 
+      <div class="separator"></div>
       <div class="led-separator2"></div>
 
       <transition name="fade">
@@ -84,9 +84,7 @@ export default {
   color: #a30311; 
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: 
-    0 0 5px rgba(163, 3, 17, 1), 
-    0 0 10px rgba(163, 3, 17, 0.7); 
+  text-shadow: 0 0 5px rgba(163, 3, 17, 1), 0 0 10px rgba(163, 3, 17, 0.7);
 }
 
 .content-table {
@@ -97,6 +95,7 @@ export default {
   border: 1px solid #a30311; 
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.5s ease-in;
 }
 
@@ -136,10 +135,12 @@ export default {
   padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .details-btn:hover {
   background-color: rgba(163, 3, 17, 0.8);
+  transform: scale(1.05);
 }
 
 .modal {
@@ -151,22 +152,26 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .modal-content {
-  background-color:var(--bg-black-50);
+  background-color: #1f1f1f;
   padding: 20px;
   border-radius: 10px;
   max-width: 500px;
-  width: 100%;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
 .modal-image {
   width: 100%;
   border-radius: 5px;
+  margin-bottom: 15px;
 }
-
 
 .close {
   position: absolute;
@@ -174,16 +179,14 @@ export default {
   right: 10px;
   font-size: 1.5em;
   cursor: pointer;
+  color: #fff;
 }
 
 .led-text {
   color: white; 
-  text-shadow:
-    0 0 5px rgba(163, 3, 17, 1),
-    0 0 10px rgba(163, 3, 17, 0.7);
+  text-shadow: 0 0 5px rgba(163, 3, 17, 1), 0 0 10px rgba(163, 3, 17, 0.7);
   margin: 0 auto; 
 }
-
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
@@ -200,13 +203,8 @@ export default {
   animation: blink 1.5s infinite;
 }
 
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 </style>
