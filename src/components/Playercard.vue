@@ -97,6 +97,9 @@ export default {
   width: 100%;
   max-height: 200px;
   border-radius: 10%;
+  object-fit: cover; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s;
 }
 
 .player-name,

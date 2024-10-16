@@ -78,11 +78,11 @@ export default {
         },
         {
           id: 5,
-          nev: 'Kevin Durant',
+          nev: 'Jayson Tatum',
           poszt: 'Small Forward',
-          kep: '/kevin2.jpg',
-          leiras: 'Kevin Durant, az NBA egyik legjobb játékosa, aki 2 NBA bajnoki címet nyert a Golden State Warriors és a Brooklyn Nets csapatával. Durant 4 alkalommal nyerte el az NBA legértékesebb játékosának (MVP) címét, és 13 alkalommal választották All-Star játékossá. Kiemelkedő teljesítménye és sokoldalúsága miatt sokan a modern kosárlabda egyik legjobb játékosának tartják. Durant a 2012-es London-i Olimpián aranyérmet nyert az Egyesült Államok csapatával.',
-          dijak: ['2x NBA Champion', '4x NBA Scoring Champion', 'NBA MVP 2014', '2x NBA Finals MVP'],
+          kep: '/tatum.jpg',
+          leiras: 'Jayson Tatum, a Boston Celtics kiemelkedő tehetsége, aki az NBA egyik legígéretesebb fiatal játékosa. Tatum több alkalommal is All-Star választott, és a 2022-es NBA-döntőben szereplő Celtics egyik kulcsjátékosa volt. A kiváló dobáskészsége és sokoldalúsága miatt a liga egyik legkeresettebb játékosának számít. A 2021-es olimpiai játékokon aranyérmet nyert az Egyesült Államok csapatával..',
+          dijak: ['1x NBA All-Star', 'NBA All-Rookie First Team', '2021 FIBA AmeriCup Champion', '2022 NBA Finals Runner-Up'],
         },
         {
           id: 6,
@@ -94,11 +94,11 @@ export default {
         },
         {
           id: 7,
-          nev: "Shaquille O'Neal",
-          poszt: 'Center',
-          kep: '/onel.jpg',
-          leiras: "Shaquille O'Neal a kosárlabda történetének egyik legdominánsabb centere. Az NBA-ben 1992-től 2011-ig játszott, és négy NBA-bajnoki címet nyert. Shaq 7 láb 1 inch (215 cm) magas volt, ami lehetővé tette számára, hogy fizikailag uralja a játékot. Az aktív pályafutása után sikeres médiaszemélyiség és üzletember lett.",
-          dijak: ['4x NBA Champion', '3x NBA Finals MVP', '15x NBA All-Star'],
+          nev: 'Anthony Edwards',
+          poszt: 'Shooting Guard',
+          kep: '/edwards.jpg',
+          leiras: 'Anthony Edwards, a Minnesota Timberwolves fiatal sztárja, aki gyors fejlődésével a liga egyik legígéretesebb játékosává vált. 2020-ban választották ki az NBA Draft első helyén, és azóta kiemelkedő teljesítménye révén sokak figyelmét felkeltette. Edwards dinamikus játéka és pontos dobásai révén a csapat kulcsszereplőjévé vált.',
+          dijak: ['NBA All-Star 2023', 'NBA Rookie of the Year 2021'],
         },
         {
           id: 8,
@@ -157,7 +157,9 @@ export default {
 }
 
 .led-text {
-  color: var(--text-color);
+  color:#fff;
+  text-shadow: 0 0 5px rgba(163, 3, 17, 1), 0 0 10px rgba(163, 3, 17, 0.7);
+  margin: 0 auto; 
 }
 
 .separator {
@@ -211,4 +213,5 @@ export default {
   font-size: 1.5em;
   cursor: pointer;
 }
+
 </style>
