@@ -3,7 +3,7 @@
     <div class="card-inner" :class="{ flipped: hover }">
       <div class="card-front">
         <img :src="jatekos.kep" alt="Kép" class="player-image" />
-        <h3 class="player-name">{{ jatekos.nev }}</h3>
+        <h3 class="player-name text-nowrap">{{ jatekos.nev }}</h3>
         <p class="player-position">{{ jatekos.poszt }}</p>
       </div>
       <div class="card-back">
