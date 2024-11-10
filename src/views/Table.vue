@@ -1,10 +1,11 @@
 <template>
-  <div class="row">
+  <div class="container">
     <div class="col-md-12 side-a">
+      <!-- Cím a táblázathoz -->
       <h1 class="table-title led-text">Kosárlabdázók Táblázata</h1>
       <div class="separator"></div>
-      <div class="led-separator2"></div>
 
+      <!-- Táblázat, ha látható -->
       <transition name="fade">
         <table v-if="isTableVisible" class="content-table">
           <thead>
@@ -29,9 +30,11 @@
           </tbody>
         </table>
       </transition>
+
       <div class="led-separator"></div>
     </div>
 
+    <!-- Modal a játékos részletes adatainak megjelenítésére -->
     <transition name="fade">
       <div v-if="selectedPlayer" class="modal" @click="closeModal">
         <div class="modal-content" @click.stop>
@@ -79,70 +82,86 @@ export default {
 </script>
 
 <style scoped>
+/* Cím a táblázathoz - Használjuk ugyanazt a formázást, mint a kártyákon */
 .table-title {
-  font-size: 2em;
-  color: #a30311; 
+  font-size: 3em;  /* Nagyobb betűméret a kiemelt címhez */
+  color: #a30311;  /* Élénk piros szín */
   text-align: center;
-  margin-bottom: 20px;
-  text-shadow: 0 0 5px rgba(163, 3, 17, 1), 0 0 10px rgba(163, 3, 17, 0.7);
+  text-shadow: 0 0 10px rgba(163, 3, 17, 1), 0 0 15px rgba(163, 3, 17, 0.8);  /* Fényes árnyék */
+  font-family: 'Arial', sans-serif;  /* Betűtípus módosítása */
+  font-weight: 900;  /* Kiemelkedő vastagság */
+  margin-bottom: 20px;  /* Néhány pixeles margó a cím alá */
 }
 
+/* Táblázat stílusa */
 .content-table {
   border-collapse: collapse;
-  margin: 15px 0;
-  font-size: 1em;
+  margin: 20px 0;
+  font-size: 1.2em;
   min-width: 100%;
-  border: 1px solid #a30311; 
-  border-radius: 10px;
+  border: 1px solid #d32f2f;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease-in;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Fejléc szín és háttér */
 .content-table thead tr {
-  background-color: #a30311; 
-  color: #ffffff;
+  background-color: #d32f2f; 
+  color: #fff;
 }
 
+/* Cellák stílusa */
 .content-table th,
 .content-table td {
-  padding: 12px 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Táblázat sorok */
 .table-cell {
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
-  background-color: var(--bg-black-50);
-  transition: background-color 0.3s;
+  background-color: #121212;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .table-row:hover .table-cell {
-  background-color: rgba(163, 3, 17, 0.2);
+  background-color: rgba(211, 47, 47, 0.2);
+  transform: scale(1.02);
 }
 
+/* Kép stílusa a táblázatban */
 .player-image {
-  width: 80px;
-  height: 80px; 
-  border-radius: 15%; 
-  object-fit: cover; 
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s;
 }
 
+.player-image:hover {
+  transform: scale(1.1);
+}
+
+/* Részletek gomb */
 .details-btn {
-  background-color: #a30311; 
+  background-color: #d32f2f;
   color: white;
   border: none;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .details-btn:hover {
-  background-color: rgba(163, 3, 17, 0.8);
+  background-color: rgba(211, 47, 47, 0.8);
   transform: scale(1.05);
 }
 
+/* Modal ablak stílusa */
 .modal {
   position: fixed;
   top: 0;
@@ -152,42 +171,43 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   animation: fadeIn 0.3s ease-in-out;
 }
 
 .modal-content {
-  background-color: #1f1f1f;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
-  width: 90%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  background-color: #2c2c2c;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 80%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
 .modal-image {
   width: 100%;
-  border-radius: 5px;
-  margin-bottom: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .close {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 1.5em;
+  font-size: 1.8em;
   cursor: pointer;
   color: #fff;
 }
 
+/* Szöveg stílusa, mint a kártyákban */
 .led-text {
-  color: white; 
-  text-shadow: 0 0 5px rgba(163, 3, 17, 1), 0 0 10px rgba(163, 3, 17, 0.7);
-  margin: 0 auto; 
+  color: white;
+  text-shadow: 0 0 8px rgba(211, 47, 47, 1), 0 0 18px rgba(211, 47, 47, 0.7);
 }
 
+/* Átmenet hatások (fade) */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
@@ -195,14 +215,16 @@ export default {
   opacity: 0;
 }
 
+/* Elválasztó vonal (separator) */
 .separator {
   height: 4px;
-  background-color: var(--led-color);
-  width: 60%;
-  margin: 10px auto;
+  background-color: #d32f2f;
+  width: 70%;
+  margin: 15px auto;
   animation: blink 1.5s infinite;
 }
 
+/* Blinking animáció */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }

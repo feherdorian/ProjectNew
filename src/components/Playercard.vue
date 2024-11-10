@@ -61,7 +61,7 @@ export default {
   align-items: center;
   border-radius: 30px;
   padding: 10px;
-  background-color: var(--bg-black-50);
+  background-color:#121212;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 

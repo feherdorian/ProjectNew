@@ -1,7 +1,10 @@
 <template>
   <div class="container">
+    <!-- Kosárlabdázók címe -->
     <h1 class="table-title led-text">Kosárlabdázók</h1>
     <div class="separator"></div> 
+
+    <!-- Kereső mező -->
     <div class="search-container">
       <input
         type="text"
@@ -9,16 +12,26 @@
         placeholder="Keresés név vagy poszt alapján"
         class="search-input"
       />
+      <i class="search-icon fas fa-search"></i>
     </div>
-    <div class="row">
+    
+    <!-- Ha nincs találat, megjelenítjük az üzenetet -->
+    <div v-if="noResults" class="no-results-message">
+      <p>Nem található ilyen játékos a rendszerünkben.</p>
+    </div>
+
+    <!-- Játékosok listája -->
+    <div class="row mt-4">
       <Playercard
         v-for="jatekos in filteredPlayers"
         :key="jatekos.id"
         :jatekos="jatekos"
         @click="showDetails(jatekos)"
+        class="player-card"
       />
     </div>
-
+    
+    <!-- Modal a játékos részletes adatainak megjelenítésére -->
     <div v-if="selectedPlayer" class="modal" @click="closeModal">
       <div class="modal-content" @click.stop>
         <span class="close" @click="closeModal">&times;</span>
@@ -44,81 +57,29 @@ export default {
     return {
       searchQuery: '',
       jatekosok: [
-        {
-          id: 1,
-          nev: 'Kobe Bryant',
-          poszt: 'Shooting Guard',
-          kep: '/kobe2.jpg',
-          leiras: 'Kobe Bryant, az NBA egyik legnagyobb játékosa. Összesen 20 évet töltött a Los Angeles Lakers csapatában, ahol 5 NBA bajnoki címet nyert. Kobe a "Black Mamba" becenéven vált ismertté, és legendás munkamoráljáról, valamint versenyszelleméről híres. Karrierje során 18 alkalommal választották All-Star játékossá, és 2008-ban elnyerte az NBA legértékesebb játékosának (MVP) címét.',
-          dijak: ['5x NBA Champion', '2x NBA Finals MVP', '18x NBA All-Star', 'NBA MVP 2008'],
-        },
-        {
-          id: 2,
-          nev: 'LeBron James',
-          poszt: 'Small Forward',
-          kep: '/lebron2.jpg',
-          leiras: 'LeBron James, a kosárlabda legendája, aki három NBA bajnoki címet nyert három különböző csapattal (Miami Heat, Cleveland Cavaliers, Los Angeles Lakers). A "King James" becenéven ismert LeBron számos rekordot tart, és az NBA történetének egyik legjobb játékosának tartják. Karrierje során 17 alkalommal választották All-Star játékossá, és 4 alkalommal elnyerte az MVP címet.',
-          dijak: ['4x NBA MVP', '4x NBA Champion', 'NBA Rookie of the Year 2004', '2x Olympic Gold Medalist'],
-        },
-        {
-          id: 3,
-          nev: 'Michael Jordan',
-          poszt: 'Shooting Guard',
-          kep: '/michael2.jpg',
-          leiras: 'Michael Jordan, az NBA történetének egyik legnagyobb ikonja. 6 NBA bajnoki címet nyert a Chicago Bulls csapatával, és 14 alkalommal választották All-Star játékossá. Jordan híres volt a versenyszelleméről, és a "His Airness" becenéven vált ismertté, amely a légies ugrásaira utal. Karrierje során 5 alkalommal nyerte el az MVP címet, és a kosárlabda kultúrára gyakorolt hatása máig érezhető.',
-          dijak: ['6x NBA Champion', '5x NBA MVP', '14x NBA All-Star', '2x Olympic Gold Medalist'],
-        },
-        {
-          id: 4,
-          nev: 'Stephen Curry',
-          poszt: 'Point Guard',
-          kep: '/stephen2.jpg',
-          leiras: 'Stephen Curry, a Golden State Warriors sztárja és a modern kosárlabdázás forradalmasítója. Curry híres a hárompontos lövéseiről, és ő az első játékos, aki egy idényben 400 hárompontos kosarat dobott. 3 NBA bajnoki címet nyert, és kétszer választották az NBA legértékesebb játékosának (MVP). Számtalan rekordot állított fel a hárompontos lövések terén, és általánosan elismert a sportág történetének legjobb dobójaként.',
-          dijak: ['3x NBA Champion', '2x NBA MVP', 'NBA 3-Point Leader'],
-        },
-        {
-          id: 5,
-          nev: 'Jayson Tatum',
-          poszt: 'Small Forward',
-          kep: '/tatum.jpg',
-          leiras: 'Jayson Tatum, a Boston Celtics kiemelkedő tehetsége, aki az NBA egyik legígéretesebb fiatal játékosa. Tatum több alkalommal is All-Star választott, és a 2022-es NBA-döntőben szereplő Celtics egyik kulcsjátékosa volt. A kiváló dobáskészsége és sokoldalúsága miatt a liga egyik legkeresettebb játékosának számít. A 2021-es olimpiai játékokon aranyérmet nyert az Egyesült Államok csapatával..',
-          dijak: ['1x NBA All-Star', 'NBA All-Rookie First Team', '2021 FIBA AmeriCup Champion', '2022 NBA Finals Runner-Up'],
-        },
-        {
-          id: 6,
-          nev: 'Larry Bird',
-          poszt: 'Small Forward / Power Forward',
-          kep: '/larry.jpg',
-          leiras: 'Larry Bird a Boston Celtics legendás játékosa, aki az 1980-as években dominálta az NBA-t. Háromszoros NBA-bajnok és háromszoros MVP, Bird híres volt a kiváló kosárlabda-intelligenciájáról, pontos lövéseiről és kreatív játékáról. Később sikeres edző és csapatvezető lett.',
-          dijak: ['3x NBA Champion', '3x NBA MVP', '12x NBA All-Star'],
-        },
-        {
-          id: 7,
-          nev: 'Anthony Edwards',
-          poszt: 'Shooting Guard',
-          kep: '/edwards.jpg',
-          leiras: 'Anthony Edwards, a Minnesota Timberwolves fiatal sztárja, aki gyors fejlődésével a liga egyik legígéretesebb játékosává vált. 2020-ban választották ki az NBA Draft első helyén, és azóta kiemelkedő teljesítménye révén sokak figyelmét felkeltette. Edwards dinamikus játéka és pontos dobásai révén a csapat kulcsszereplőjévé vált.',
-          dijak: ['NBA All-Star 2023', 'NBA Rookie of the Year 2021'],
-        },
-        {
-          id: 8,
-          nev: 'Magic Johnson',
-          poszt: 'Point Guard',
-          kep: '/magic.jpg',
-          leiras: 'Earvin "Magic" Johnson a kosárlabda egyik legnagyobb alakja, aki az 1980-as években és a 90-es évek elején játszott. A Los Angeles Lakers csapatában vált híressé, ahol 1979 és 1991, valamint 1996 között szerepelt. Johnson öt NBA-bajnoki címet nyert és háromszor választották az NBA MVP-jének.',
-          dijak: ['5x NBA Champion', '3x NBA MVP', '12x NBA All-Star'],
-        },
+        { id: 1, nev: 'Kobe Bryant', poszt: 'Shooting Guard', kep: '/kobe2.jpg', leiras: 'Kobe Bryant, az NBA egyik legnagyobb játékosa.', dijak: ['5x NBA Champion', '2x NBA Finals MVP'] },
+        { id: 2, nev: 'LeBron James', poszt: 'Small Forward', kep: '/lebron2.jpg', leiras: 'LeBron James, kosárlabda legendája.', dijak: ['4x NBA MVP', '4x NBA Champion'] },
+        { id: 3, nev: 'Michael Jordan', poszt: 'Shooting Guard', kep: '/michael2.jpg', leiras: 'Michael Jordan, a kosárlabda történetének egyik legnagyobb ikonja.', dijak: ['6x NBA Champion', '5x NBA MVP'] },
+        { id: 4, nev: 'Stephen Curry', poszt: 'Point Guard', kep: '/stephen2.jpg', leiras: 'Stephen Curry, a modern kosárlabdázás forradalmasítója.', dijak: ['3x NBA Champion', '2x NBA MVP'] },
+        { id: 5, nev: 'Jayson Tatum', poszt: 'Small Forward', kep: '/tatum.jpg', leiras: 'Jayson Tatum, a Boston Celtics kiemelkedő tehetsége.', dijak: ['1x NBA All-Star', 'NBA All-Rookie First Team'] },
+        { id: 6, nev: 'Larry Bird', poszt: 'Small Forward / Power Forward', kep: '/larry.jpg', leiras: 'Larry Bird a Boston Celtics legendás játékosa.', dijak: ['3x NBA Champion', '3x NBA MVP'] },
+        { id: 7, nev: 'Anthony Edwards', poszt: 'Shooting Guard', kep: '/edwards.jpg', leiras: 'Anthony Edwards, a Minnesota Timberwolves fiatal sztárja.', dijak: ['NBA All-Star 2023', 'NBA Rookie of the Year 2021'] },
+        { id: 8, nev: 'Magic Johnson', poszt: 'Point Guard', kep: '/magic.jpg', leiras: 'Earvin "Magic" Johnson, a kosárlabda egyik legnagyobb alakja.', dijak: ['5x NBA Champion', '3x NBA MVP'] },
       ],
       selectedPlayer: null,
+      noResults: false,  // A keresési eredmények állapota
     };
   },
   computed: {
     filteredPlayers() {
-      return this.jatekosok.filter((jatekos) => {
+      const players = this.jatekosok.filter((jatekos) => {
         const nameMatch = jatekos.nev.toLowerCase().includes(this.searchQuery.toLowerCase());
         const positionMatch = jatekos.poszt.toLowerCase().includes(this.searchQuery.toLowerCase());
         return nameMatch || positionMatch;
       });
+
+      this.noResults = players.length === 0;
+      return players;
     },
   },
   methods: {
@@ -133,54 +94,108 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  padding: 20px;
+/* Cím stílusa - Azonos a táblázat címével */
+.table-title {
+  font-size: 3em;  /* Nagyobb betűméret a kiemelt címhez */
+  color: #a30311;  /* Élénk piros szín */
+  text-align: center;
+  text-shadow: 0 0 10px rgba(163, 3, 17, 1), 0 0 15px rgba(163, 3, 17, 0.8);  /* Fényes árnyék */
+  font-family: 'Arial', sans-serif;  /* Betűtípus módosítása */
+  font-weight: 900;  /* Kiemelkedő vastagság */
+  margin-bottom: 20px;  /* Néhány pixeles margó a cím alá */
 }
 
+/* Kereső konténer beállítása */
 .search-container {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   margin-bottom: 20px;
+  position: relative;
 }
 
+/* A kereső input stílusa */
 .search-input {
-  padding: 5px;
-  border: 1px solid #a30311;
-  border-radius: 5px;
-  width: 250px;
+  padding: 12px 20px;
+  border: 2px solid #a30311;
+  border-radius: 50px;
+  background-color: #333333;
+  color: white;
+  font-size: 16px;
+  width: 300px;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
-.table-title {
-  font-size: 2em;
+/* Kereső input fókuszálásakor */
+.search-input:focus {
+  border-color: #ff4d4d;
+  background-color: #444;
+  box-shadow: 0 0 10px rgba(163, 3, 17, 0.6);
+}
+
+/* Kereső ikon stílusa */
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
   color: #a30311;
+  transition: color 0.3s ease;
+}
+
+/* Kereső ikon hover */
+.search-container:hover .search-icon {
+  color: #ff4d4d;
+}
+
+/* Üzenet, ha nincs találat */
+.no-results-message {
   text-align: center;
+  font-size: 1.2em;
+  color: #ff4d4d;
+  margin-top: 20px;
 }
 
-.led-text {
-  color:#fff;
-  text-shadow: 0 0 5px rgba(163, 3, 17, 1), 0 0 10px rgba(163, 3, 17, 0.7);
-  margin: 0 auto; 
-}
-
-.separator {
-  height: 4px;
-  background-color: var(--led-color);
-  width: 60%;
-  margin: 10px auto;
-  animation: blink 1.5s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
+/* A játékosok listájának megjelenítése */
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
+.player-card {
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+}
+
+.player-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .player-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .player-card {
+    width: 100%;
+  }
+}
+
+/* Modal beállítások */
 .modal {
   position: fixed;
   top: 0;
@@ -190,15 +205,19 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
 }
 
 .modal-content {
-  background-color:var(--bg-black-50);
+  background-color: #121212;
   padding: 20px;
   border-radius: 10px;
   max-width: 500px;
   width: 100%;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .modal-image {
@@ -212,6 +231,19 @@ export default {
   right: 10px;
   font-size: 1.5em;
   cursor: pointer;
+  color: #ff4d4d;
 }
 
+.close:hover {
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.led-text {
+  color: white;
+  text-shadow: 0 0 8px rgba(211, 47, 47, 1), 0 0 18px rgba(211, 47, 47, 0.7);
+}
 </style>

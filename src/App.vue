@@ -93,38 +93,37 @@ header {
 .nav {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .nav li {
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 .nav-link {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  display: block;
-  color: white; 
-  padding: 5px 15px;
+  color: white;
+  padding: 10px 20px;
   text-decoration: none;
-  transition: 0.5s;
-  text-shadow: 
-    0 0 5px rgba(163, 3, 17, 1), 
-    0 0 10px rgba(163, 3, 17, 0.7); 
+  background-color: #a30311;
+  border-radius: 30px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(163, 3, 17, 0.5);
 }
 
 .nav-link:hover {
-  color: white; 
-  text-shadow: 
-    0 0 5px rgba(163, 3, 17, 1), 
-    0 0 10px rgba(163, 3, 17, 0.7); 
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(163, 3, 17, 0.7), 0 0 40px rgba(163, 3, 17, 0.3);
 }
 
 .nav-link.active {
-  color: white; 
+  background-color: #d32f2f;
+  color: #fff;
   font-weight: 700;
-  text-shadow: 
-    0 0 5px rgba(163, 3, 17, 1), 
-    0 0 10px rgba(163, 3, 17, 0.7); 
+  box-shadow: 0 0 20px rgba(211, 47, 47, 0.8), 0 0 30px rgba(211, 47, 47, 0.5);
 }
 
 .form-check-input:checked {
