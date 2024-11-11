@@ -65,6 +65,7 @@ export default {
         { id: 6, nev: 'Larry Bird', poszt: 'Small Forward / Power Forward', kep: '/larry.jpg', leiras: 'Larry Bird a Boston Celtics legendás játékosa.', dijak: ['3x NBA Champion', '3x NBA MVP'] },
         { id: 7, nev: 'Anthony Edwards', poszt: 'Shooting Guard', kep: '/edwards.jpg', leiras: 'Anthony Edwards, a Minnesota Timberwolves fiatal sztárja.', dijak: ['NBA All-Star 2023', 'NBA Rookie of the Year 2021'] },
         { id: 8, nev: 'Magic Johnson', poszt: 'Point Guard', kep: '/magic.jpg', leiras: 'Earvin "Magic" Johnson, a kosárlabda egyik legnagyobb alakja.', dijak: ['5x NBA Champion', '3x NBA MVP'] },
+        { id: 9, nev: 'Molnár Krisztián', poszt: 'Burger King Konyha.', kep: '/kiki.jpg', leiras: 'Burger King dolgozó', dijak: ['LOL vb', 'Hónap dolgozója (Burger king)', 'MTA nagykövet'] },
       ],
       selectedPlayer: null,
       noResults: false,  // A keresési eredmények állapota
@@ -161,8 +162,8 @@ export default {
 /* A játékosok listájának megjelenítése */
 .row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
   margin-top: 20px;
 }
 
